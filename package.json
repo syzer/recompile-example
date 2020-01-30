@@ -1,0 +1,12 @@
+{
+  "name": "recompile-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "db.js",
+  "scripts": {
+    "watch": "nodemon -q -x 'pkg --public db.js -t node12-macos-x64 && ./db'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "syzer",
+  "license": "ISC"
+}
