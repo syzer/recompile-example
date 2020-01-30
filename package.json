@@ -4,6 +4,7 @@
   "description": "",
   "main": "db.js",
   "scripts": {
+    "run": "npm run watch",
     "watch": "nodemon -q -x 'pkg --public db.js -t node12-macos-x64 && ./db'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
