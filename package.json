@@ -1,13 +1,30 @@
 {
   "name": "recompile-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Server",
+  "bin": "index.js",
   "main": "db.js",
   "scripts": {
     "run": "npm run watch",
+    "server": "nodemon -q -x 'pkg . && ./recompile-example'",
     "watch": "nodemon -q -x 'pkg --public db.js -t node12-macos-x64 && ./db'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon -x 'curl localhost:8080 -s | grep Error'"
   },
   "author": "syzer",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "pkg": "^4.4.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "pkg": {
+    "assets": [
+      "views/**/*"
+    ],
+    "targets": [
+      "node12-macos-x64"
+    ]
+  }
 }
